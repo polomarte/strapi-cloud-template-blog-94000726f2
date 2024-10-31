@@ -580,6 +580,41 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBungalowBungalow extends Struct.CollectionTypeSchema {
+  collectionName: 'bungalows';
+  info: {
+    singularName: 'bungalow';
+    pluralName: 'bungalows';
+    displayName: 'Bungalow';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    suits: Schema.Attribute.Integer;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    creditsByNight: Schema.Attribute.Decimal;
+    offers: Schema.Attribute.Relation<'oneToMany', 'api::offer.offer'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::bungalow.bungalow'
+    >;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -611,6 +646,35 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'Faq';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    question: Schema.Attribute.String;
+    answer: Schema.Attribute.Text;
+    type: Schema.Attribute.Enumeration<
+      ['Reservas', 'Cr\u00E9ditos', 'Servi\u00E7os', 'Onboarding']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -636,6 +700,85 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::global.global'>;
+  };
+}
+
+export interface ApiOfferOffer extends Struct.CollectionTypeSchema {
+  collectionName: 'offers';
+  info: {
+    singularName: 'offer';
+    pluralName: 'offers';
+    displayName: 'Offer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::offer.offer'>;
+  };
+}
+
+export interface ApiRuleRule extends Struct.SingleTypeSchema {
+  collectionName: 'rules';
+  info: {
+    singularName: 'rule';
+    pluralName: 'rules';
+    displayName: 'Rule';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    rule: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::rule.rule'>;
+  };
+}
+
+export interface ApiTalkToUsTalkToUs extends Struct.SingleTypeSchema {
+  collectionName: 'talk_to_uses';
+  info: {
+    singularName: 'talk-to-us';
+    pluralName: 'talk-to-uses';
+    displayName: 'Talk to us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    openingHours: Schema.Attribute.String;
+    phoneNumber: Schema.Attribute.String;
+    whatsapp: Schema.Attribute.String;
+    email: Schema.Attribute.Email;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::talk-to-us.talk-to-us'
+    >;
   };
 }
 
@@ -1017,8 +1160,13 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::bungalow.bungalow': ApiBungalowBungalow;
       'api::category.category': ApiCategoryCategory;
+      'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
+      'api::offer.offer': ApiOfferOffer;
+      'api::rule.rule': ApiRuleRule;
+      'api::talk-to-us.talk-to-us': ApiTalkToUsTalkToUs;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;

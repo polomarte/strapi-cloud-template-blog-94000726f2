@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bungalows",
+  "info": {
+    "singularName": "bungalow",
+    "pluralName": "bungalows",
+    "displayName": "Bungalow",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "suits": {
+      "type": "integer"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "creditsByNight": {
+      "type": "decimal"
+    },
+    "offers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::offer.offer"
+    }
+  }
+}

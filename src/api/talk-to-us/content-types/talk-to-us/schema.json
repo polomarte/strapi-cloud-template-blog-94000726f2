@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "talk_to_uses",
+  "info": {
+    "singularName": "talk-to-us",
+    "pluralName": "talk-to-uses",
+    "displayName": "Talk to us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "openingHours": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}
