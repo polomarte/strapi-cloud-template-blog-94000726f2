@@ -713,12 +713,13 @@ export interface ApiOfferOffer extends Struct.CollectionTypeSchema {
     singularName: 'offer';
     pluralName: 'offers';
     displayName: 'Offer';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     description: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
