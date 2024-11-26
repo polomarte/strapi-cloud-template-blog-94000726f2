@@ -39,6 +39,15 @@
     },
     "totvsId": {
       "type": "integer"
+    },
+    "adults": {
+      "type": "integer"
+    },
+    "kids": {
+      "type": "integer"
+    },
+    "babies": {
+      "type": "integer"
     }
   }
 }

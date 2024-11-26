@@ -601,6 +601,9 @@ export interface ApiBungalowBungalow extends Struct.CollectionTypeSchema {
     creditsByNight: Schema.Attribute.Decimal;
     offers: Schema.Attribute.Relation<'oneToMany', 'api::offer.offer'>;
     totvsId: Schema.Attribute.Integer;
+    adults: Schema.Attribute.Integer;
+    kids: Schema.Attribute.Integer;
+    babies: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
