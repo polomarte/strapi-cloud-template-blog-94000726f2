@@ -593,17 +593,12 @@ export interface ApiBungalowBungalow extends Struct.CollectionTypeSchema {
   };
   attributes: {
     name: Schema.Attribute.String;
-    suits: Schema.Attribute.Integer;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
     creditsByNight: Schema.Attribute.Decimal;
     offers: Schema.Attribute.Relation<'oneToMany', 'api::offer.offer'>;
-    totvsId: Schema.Attribute.Integer;
-    adults: Schema.Attribute.Integer;
-    kids: Schema.Attribute.Integer;
-    babies: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

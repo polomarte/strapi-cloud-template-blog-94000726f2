@@ -15,9 +15,6 @@
     "name": {
       "type": "string"
     },
-    "suits": {
-      "type": "integer"
-    },
     "images": {
       "type": "media",
       "multiple": true,
@@ -36,18 +33,6 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::offer.offer"
-    },
-    "totvsId": {
-      "type": "integer"
-    },
-    "adults": {
-      "type": "integer"
-    },
-    "kids": {
-      "type": "integer"
-    },
-    "babies": {
-      "type": "integer"
     }
   }
 }
