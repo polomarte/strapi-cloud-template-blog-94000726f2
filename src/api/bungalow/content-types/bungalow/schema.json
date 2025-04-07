@@ -33,6 +33,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::offer.offer"
+    },
+    "suites": {
+      "type": "integer"
+    },
+    "guests": {
+      "type": "integer"
     }
   }
 }
