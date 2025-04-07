@@ -519,6 +519,7 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
     singularName: 'activity';
     pluralName: 'activities';
     displayName: 'Activity';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -526,7 +527,6 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
   attributes: {
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    slug: Schema.Attribute.UID;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
@@ -805,6 +805,7 @@ export interface ApiScheduleSchedule extends Struct.CollectionTypeSchema {
     singularName: 'schedule';
     pluralName: 'schedules';
     displayName: 'Schedule';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -812,7 +813,6 @@ export interface ApiScheduleSchedule extends Struct.CollectionTypeSchema {
   attributes: {
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    slug: Schema.Attribute.UID;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
