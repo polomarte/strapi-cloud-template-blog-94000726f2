@@ -530,6 +530,7 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    link: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -726,6 +727,7 @@ export interface ApiNotificationNotification
     singularName: 'notification';
     pluralName: 'notifications';
     displayName: 'Notification';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -733,7 +735,7 @@ export interface ApiNotificationNotification
   attributes: {
     cover: Schema.Attribute.Media<'images' | 'files'>;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
-    url: Schema.Attribute.String;
+    link: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -816,6 +818,7 @@ export interface ApiScheduleSchedule extends Struct.CollectionTypeSchema {
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    link: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
