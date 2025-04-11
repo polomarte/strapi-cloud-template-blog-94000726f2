@@ -39,6 +39,11 @@
     },
     "guests": {
       "type": "integer"
+    },
+    "suits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::suit.suit"
     }
   }
 }

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "suits",
+  "info": {
+    "singularName": "suit",
+    "pluralName": "suits",
+    "displayName": "Suit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "beds": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bed.bed"
+    },
+    "conjunctions": {
+      "type": "enumeration",
+      "enum": [
+        "e",
+        "ou"
+      ]
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}
