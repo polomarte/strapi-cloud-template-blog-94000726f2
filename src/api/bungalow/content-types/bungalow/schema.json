@@ -40,10 +40,10 @@
     "guests": {
       "type": "integer"
     },
-    "suits": {
+    "suiteConfigurations": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::suit.suit"
+      "target": "api::suite-configuration.suite-configuration"
     }
   }
 }

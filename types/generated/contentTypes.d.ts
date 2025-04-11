@@ -623,7 +623,10 @@ export interface ApiBungalowBungalow extends Struct.CollectionTypeSchema {
     offers: Schema.Attribute.Relation<'oneToMany', 'api::offer.offer'>;
     suites: Schema.Attribute.Integer;
     guests: Schema.Attribute.Integer;
-    suits: Schema.Attribute.Relation<'oneToMany', 'api::suit.suit'>;
+    suiteConfigurations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::suite-configuration.suite-configuration'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -864,23 +867,26 @@ export interface ApiScheduleSchedule extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiSuitSuit extends Struct.CollectionTypeSchema {
-  collectionName: 'suits';
+export interface ApiSuiteConfigurationSuiteConfiguration
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'suite_configurations';
   info: {
-    singularName: 'suit';
-    pluralName: 'suits';
-    displayName: 'Suit';
-    description: '';
+    singularName: 'suite-configuration';
+    pluralName: 'suite-configurations';
+    displayName: 'Suite Configuration';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    cover: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     name: Schema.Attribute.String;
-    beds: Schema.Attribute.Relation<'oneToMany', 'api::bed.bed'>;
     conjunctions: Schema.Attribute.Enumeration<['e', 'ou']>;
     description: Schema.Attribute.String;
+    beds: Schema.Attribute.Relation<'oneToMany', 'api::bed.bed'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -889,7 +895,10 @@ export interface ApiSuitSuit extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::suit.suit'>;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::suite-configuration.suite-configuration'
+    >;
   };
 }
 
@@ -1311,7 +1320,7 @@ declare module '@strapi/strapi' {
       'api::offer.offer': ApiOfferOffer;
       'api::rule.rule': ApiRuleRule;
       'api::schedule.schedule': ApiScheduleSchedule;
-      'api::suit.suit': ApiSuitSuit;
+      'api::suite-configuration.suite-configuration': ApiSuiteConfigurationSuiteConfiguration;
       'api::talk-to-us.talk-to-us': ApiTalkToUsTalkToUs;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
