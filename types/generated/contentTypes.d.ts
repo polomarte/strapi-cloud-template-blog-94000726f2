@@ -627,6 +627,7 @@ export interface ApiBungalowBungalow extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::suite-configuration.suite-configuration'
     >;
+    description: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
