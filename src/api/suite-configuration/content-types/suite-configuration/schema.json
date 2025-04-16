@@ -4,7 +4,8 @@
   "info": {
     "singularName": "suite-configuration",
     "pluralName": "suite-configurations",
-    "displayName": "Suite Configuration"
+    "displayName": "Suite Configuration",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,14 +13,15 @@
   "pluginOptions": {},
   "attributes": {
     "cover": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "name": {
       "type": "string"
@@ -38,6 +40,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::bed.bed"
+    },
+    "label": {
+      "type": "string"
     }
   }
 }
