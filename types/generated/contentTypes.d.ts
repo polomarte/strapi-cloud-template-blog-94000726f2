@@ -490,7 +490,7 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'activity';
     pluralName: 'activities';
-    displayName: 'Activity';
+    displayName: 'Atividades';
     description: '';
   };
   options: {
@@ -523,7 +523,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'author';
     pluralName: 'authors';
-    displayName: 'Author';
+    displayName: 'Autor';
     description: 'Create authors for your content';
   };
   options: {
@@ -550,7 +550,7 @@ export interface ApiBedBed extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'bed';
     pluralName: 'beds';
-    displayName: 'Bed';
+    displayName: 'Camas';
     description: '';
   };
   options: {
@@ -579,7 +579,7 @@ export interface ApiBungalowBungalow extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'bungalow';
     pluralName: 'bungalows';
-    displayName: 'Bungalow';
+    displayName: 'Bangal\u00F4s';
     description: '';
   };
   options: {
@@ -620,7 +620,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'category';
     pluralName: 'categories';
-    displayName: 'Category';
+    displayName: 'Categorias';
     description: 'Organize your content into categories';
   };
   options: {
@@ -628,8 +628,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
   attributes: {
     name: Schema.Attribute.String;
-    slug: Schema.Attribute.UID;
-    description: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -680,6 +678,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     singularName: 'home';
     pluralName: 'homes';
     displayName: 'Home';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -704,7 +703,7 @@ export interface ApiNotificationNotification
   info: {
     singularName: 'notification';
     pluralName: 'notifications';
-    displayName: 'Notification';
+    displayName: 'Notifica\u00E7\u00F5es';
     description: '';
   };
   options: {
@@ -734,7 +733,7 @@ export interface ApiOfferOffer extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'offer';
     pluralName: 'offers';
-    displayName: 'Offer';
+    displayName: 'Oferecimento da acomoda\u00E7\u00E3o';
     description: '';
   };
   options: {
@@ -760,7 +759,8 @@ export interface ApiRuleRule extends Struct.SingleTypeSchema {
   info: {
     singularName: 'rule';
     pluralName: 'rules';
-    displayName: 'Rule';
+    displayName: 'Regras';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -784,7 +784,7 @@ export interface ApiScheduleSchedule extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'schedule';
     pluralName: 'schedules';
-    displayName: 'Schedule';
+    displayName: 'Programa\u00E7\u00E3o';
     description: '';
   };
   options: {
@@ -818,7 +818,7 @@ export interface ApiSuiteConfigurationSuiteConfiguration
   info: {
     singularName: 'suite-configuration';
     pluralName: 'suite-configurations';
-    displayName: 'Suite Configuration';
+    displayName: 'Configura\u00E7\u00E3o da suite';
     description: '';
   };
   options: {
@@ -854,7 +854,8 @@ export interface ApiTalkToUsTalkToUs extends Struct.SingleTypeSchema {
   info: {
     singularName: 'talk-to-us';
     pluralName: 'talk-to-uses';
-    displayName: 'Talk to us';
+    displayName: 'Fale com a gente';
+    description: '';
   };
   options: {
     draftAndPublish: true;

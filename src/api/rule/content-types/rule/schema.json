@@ -4,7 +4,8 @@
   "info": {
     "singularName": "rule",
     "pluralName": "rules",
-    "displayName": "Rule"
+    "displayName": "Regras",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

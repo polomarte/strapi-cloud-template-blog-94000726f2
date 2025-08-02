@@ -4,7 +4,7 @@
   "info": {
     "singularName": "suite-configuration",
     "pluralName": "suite-configurations",
-    "displayName": "Suite Configuration",
+    "displayName": "Configuração da suite",
     "description": ""
   },
   "options": {

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "talk-to-us",
     "pluralName": "talk-to-uses",
-    "displayName": "Talk to us"
+    "displayName": "Fale com a gente",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
