@@ -34,11 +34,6 @@
       "relation": "oneToOne",
       "target": "api::author.author"
     },
-    "category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::category.category"
-    },
     "link": {
       "type": "string"
     }

@@ -21,10 +21,10 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "Reservas",
-        "Créditos",
-        "Serviços",
-        "Onboarding"
+        "Clube",
+        "Títulos",
+        "Mensalidade",
+        "Kite"
       ]
     }
   }

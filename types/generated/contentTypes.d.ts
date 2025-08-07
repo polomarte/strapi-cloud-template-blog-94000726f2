@@ -501,7 +501,6 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
     description: Schema.Attribute.Text;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
-    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     link: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -658,7 +657,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     question: Schema.Attribute.String;
     answer: Schema.Attribute.Text;
     type: Schema.Attribute.Enumeration<
-      ['Reservas', 'Cr\u00E9ditos', 'Servi\u00E7os', 'Onboarding']
+      ['Clube', 'T\u00EDtulos', 'Mensalidade', 'Kite']
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -795,7 +794,6 @@ export interface ApiScheduleSchedule extends Struct.CollectionTypeSchema {
     description: Schema.Attribute.Text;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
-    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     link: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
