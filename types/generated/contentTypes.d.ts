@@ -614,34 +614,6 @@ export interface ApiBungalowBungalow extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Categorias';
-    description: 'Organize your content into categories';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    name: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    >;
-  };
-}
-
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -1257,7 +1229,6 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::bed.bed': ApiBedBed;
       'api::bungalow.bungalow': ApiBungalowBungalow;
-      'api::category.category': ApiCategoryCategory;
       'api::faq.faq': ApiFaqFaq;
       'api::home.home': ApiHomeHome;
       'api::notification.notification': ApiNotificationNotification;
